@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so nguyen to</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt('so luong so nguyen to muon hien thi:'));
+    let count = 0;
+    let i = 2;
+    let j;
+    let text = numbers + " so nguyen to dau tien la: ";
+    while (count < numbers) {
+        let check = true;
+        for (j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j === 0) {
+                check = false;
+                break;
+            }
+        }
+        if (check === true) {
+            count++;
+            if (count === numbers) {
+                text += i + ".";
+            } else {
+                text += i + " , ";
+            }
+        }
+        i++;
+    }
+    document.write(text)
+</script>
+</body>
+</html>
